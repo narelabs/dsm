@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from nare3.dsm.embedding import cosine
-from nare3.dsm.models import MemorySegment
+from dsm.embedding import cosine
+from dsm.models import MemorySegment
 
 
 class SegmentIndex:

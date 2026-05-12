@@ -1,13 +1,8 @@
-"""NARE-3: Dynamic Segmented Memory."""
+"""Dynamic Segmented Memory public API."""
 
-from nare3.dsm import (
-    ActiveContext,
-    DynamicSegmentedMemory,
-    HashEmbeddingModel,
-    MemorySegment,
-    PriorityVector,
-    RouteResult,
-)
+from dsm.embedding import HashEmbeddingModel
+from dsm.memory import DynamicSegmentedMemory
+from dsm.models import ActiveContext, MemorySegment, PriorityVector, RouteResult
 
 __all__ = [
     "ActiveContext",

@@ -1,7 +1,7 @@
-from nare3 import DynamicSegmentedMemory
+from dsm import DynamicSegmentedMemory
 
 
-memory = DynamicSegmentedMemory(".nare3/example.json", active_segment_limit=3)
+memory = DynamicSegmentedMemory(".dsm/example.json", active_segment_limit=3)
 
 memory.write(
     "Rust websocket services need bounded channels, ping timeouts and cancellation-safe tasks.",

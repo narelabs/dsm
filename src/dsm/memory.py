@@ -5,12 +5,12 @@ import re
 from pathlib import Path
 from typing import Any
 
-from nare3.dsm.category import CategoryTree
-from nare3.dsm.embedding import EmbeddingModel, HashEmbeddingModel, cosine, top_terms
-from nare3.dsm.graph import MemoryGraph
-from nare3.dsm.index import SegmentIndex
-from nare3.dsm.models import ActiveContext, MemorySegment, PriorityVector, RouteResult, now_ts
-from nare3.dsm.storage import JsonStorage
+from dsm.category import CategoryTree
+from dsm.embedding import EmbeddingModel, HashEmbeddingModel, cosine, top_terms
+from dsm.graph import MemoryGraph
+from dsm.index import SegmentIndex
+from dsm.models import ActiveContext, MemorySegment, PriorityVector, RouteResult, now_ts
+from dsm.storage import JsonStorage
 
 
 class DynamicSegmentedMemory:
@@ -33,7 +33,7 @@ class DynamicSegmentedMemory:
         self.segment_token_limit = segment_token_limit
         self.active_segment_limit = active_segment_limit
         self.active_token_budget = active_token_budget
-        self.storage = JsonStorage(storage_path or Path(".nare3") / "dsm.json")
+        self.storage = JsonStorage(storage_path or Path(".dsm") / "memory.json")
 
         self.segments: dict[str, MemorySegment] = {}
         self.categories = CategoryTree(self.embedding_model)

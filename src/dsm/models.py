@@ -143,9 +143,7 @@ class CategoryNode:
 
     def add_child(self, name: str, embedding: list[float]) -> "CategoryNode":
         if name not in self.children:
-            self.children[name] = CategoryNode(
-                name=name, path=self.path + (name,), embedding=embedding
-            )
+            self.children[name] = CategoryNode(name=name, path=self.path + (name,), embedding=embedding)
         return self.children[name]
 
     def find(self, path: tuple[str, ...]) -> "CategoryNode | None":
@@ -171,9 +169,7 @@ class CategoryNode:
             "segment_ids": sorted(self.segment_ids),
             "created_at": self.created_at,
             "updated_at": self.updated_at,
-            "children": {
-                name: child.to_dict() for name, child in sorted(self.children.items())
-            },
+            "children": {name: child.to_dict() for name, child in sorted(self.children.items())},
         }
 
     @classmethod
@@ -187,8 +183,7 @@ class CategoryNode:
             updated_at=float(data.get("updated_at", now_ts())),
         )
         node.children = {
-            str(name): cls.from_dict(child)
-            for name, child in data.get("children", {}).items()
+            str(name): cls.from_dict(child) for name, child in data.get("children", {}).items()
         }
         return node
 

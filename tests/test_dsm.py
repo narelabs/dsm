@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from nare3 import DynamicSegmentedMemory
-from nare3.dsm.memory import sparse_attention_cost
+from dsm import DynamicSegmentedMemory
+from dsm.memory import sparse_attention_cost
 
 
 def test_write_route_active_context(tmp_path: Path) -> None:

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from nare3.dsm.embedding import EmbeddingModel, cosine, mean_embedding, top_terms
-from nare3.dsm.models import CategoryNode, MemorySegment, now_ts
+from dsm.embedding import EmbeddingModel, cosine, mean_embedding, top_terms
+from dsm.models import CategoryNode, MemorySegment, now_ts
 
 
 DEFAULT_TOPICS = {
@@ -16,7 +16,7 @@ DEFAULT_TOPICS = {
         "code",
         "bug",
         "test",
-        "cli",
+        "tooling",
         "database",
     },
     "Science": {
